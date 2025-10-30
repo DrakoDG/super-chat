@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏆 YouTube Super Chat Tracker</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>📊 Recuento de Super Chats</h1>
+        <p>Seguimiento en tiempo real de donaciones y puntos de participantes.</p>
+    </header>
+
+    <main class="container">
+        <section class="totals-grid">
+            <div class="card total-card">
+                <h3>💰 Total Recaudado</h3>
+                <p id="total-donado" class="total-amount">P 0.00 ($)</p>
+            </div>
+            <div class="card total-card last-24h-card">
+                <h3>⏳ Últimas 24 Horas</h3>
+                <p id="total-24h" class="total-amount">P 0.00 ($)</p>
+            </div>
+        </section>
+
+        <section class="last-message-section">
+            <div class="card" id="last-message-box">
+                Esperando el primer Super Chat...
+            </div>
+        </section>
+
+        <section class="leaderboard-section" id="leaderboard-container">
+            </section>
+    </main>
+
+    <footer class="footer">
+        <p>Desarrollado con ❤️ para Vercel & MongoDB | Datos: YouTube Live Chat API</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

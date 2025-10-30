@@ -1,0 +1,12 @@
+{
+  "name": "super-chat",
+  "version": "1.0.0",
+  "main": "api/chat.js",
+  "scripts": {
+    "start": "echo 'Vercel maneja el inicio del servidor'"
+  },
+  "dependencies": {
+    "mongodb": "^6.20.0",
+    "node-fetch": "^3.3.2"
+  }
+}

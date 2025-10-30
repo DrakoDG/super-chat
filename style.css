@@ -1,0 +1,144 @@
+/* style.css */
+:root {
+    --primary-color: #FF0000; /* Rojo YouTube */
+    --secondary-color: #1a1a1a; /* Oscuro */
+    --bg-color: #f4f4f9; /* Fondo claro */
+    --card-bg: #ffffff;
+    --text-color: #333;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Header */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Cards Generales */
+.card {
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+}
+
+/* Totales Grid */
+.totals-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.total-card h3 {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.total-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.last-24h-card h3 {
+    color: #007bff; /* Azul para diferenciar */
+}
+
+/* Último Mensaje */
+.last-message-section .card {
+    border-left: 5px solid var(--primary-color);
+    background-color: #fff3f3;
+}
+
+/* Leaderboard */
+.leaderboard-section h2 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+#puntos-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+
+#puntos-table thead {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#puntos-table th, #puntos-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#puntos-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#puntos-table tbody tr:hover {
+    background-color: #ffeaea;
+    transition: background-color 0.3s;
+}
+
+/* Celdas de Puntos */
+.points-cell {
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+/* Rangos */
+.rank-1 { background-color: #ffeb3b !important; font-weight: bold; }
+.rank-2 { background-color: #bdbdbd !important; }
+.rank-3 { background-color: #ffcc80 !important; }
+
+/* Responsivo */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    #puntos-table th, #puntos-table td {
+        padding: 8px 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Ocultar columna de alias en móviles */
+    #puntos-table td:nth-child(2) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 150px;
+    }
+}
