@@ -12,8 +12,64 @@ const DB_NAME = 'youtube_chat';
 
 // === TASAS DE CAMBIO (Del Script Original) ===
 // (Deben ser las mismas que en el frontend para consistencia)
-const TASA_CAMBIO_USD = { /* ... (Tus tasas de cambio originales) ... */ };
-const PARTICIPANTES_DATA = [ /* ... (Tus participantes originales) ... */ ];
+const TASA_CAMBIO_USD = {
+    // Tasa: 1 unidad de moneda = X USD (Punto)
+    'EUR': 1.08,  // Euro
+    'GBP': 1.25,  // Libra Esterlina
+    'CHF': 1.11,  // Franco Suizo
+    'CAD': 0.73,  // Dólar Canadiense
+    'AUD': 0.65,  // Dólar Australiano
+    'JPY': 0.0063, // Yen Japonés
+    'USD': 1.00,  // Dólar estadounidense (Base)
+    'DOP': 0.017, // Peso Dominicano 
+    'MXN': 0.055, // Peso Mexicano
+    'COP': 0.00025, // Peso Colombiano
+    'BRL': 0.19,  // Real Brasileño
+    'PAB': 1.00,  // Balboa Panameño
+    'PEN': 0.27,  // Sol Peruano
+    'CLP': 0.0011, // Peso Chileno
+    'ARS': 0.0011, // Peso Argentino 
+    'VES': 0.027, // Bolívar Soberano Venezolano
+    'CRC': 0.0019, // Colón Costarricense
+    'GTQ': 0.13,  // Quetzal Guatemalteco
+    'HNL': 0.041, // Lempira Hondureña
+    'NIO': 0.027, // Córdoba Nicaragüense
+    'CUC': 1.00,  // Peso Cubano Convertible
+    'KRW': 0.00072, // Won Surcoreano
+    'CNY': 0.14,  // Yuan Chino
+    'AED': 0.27,  // Dirham de Emiratos Árabes Unidos
+    'INR': 0.012, // Rupia India
+    'SAR': 0.27,  // Riyal Saudí
+    'ZAR': 0.054, // Rand Sudafricano
+    'RUB': 0.010, // Rublo Ruso
+    'PLN': 0.25,  // Zloty Polaco
+    'SEK': 0.091, // Corona Sueca
+    'TRY': 0.031, // Lira Turca
+    'HKD': 0.13,  // Dólar de Hong Kong
+};
+
+const PARTICIPANTES_DATA = [
+    { nombre: "La Fruta", alias: ["La Fruta", "🍇", "Fruta"] },
+    { nombre: "Michael Flores", alias: ["Flores", "PR", "Boris", "Nenes", "Michael"] },
+    { nombre: "Jlexis", alias: ["Nene", "PR", "Boris", "🇵🇷"] },
+    { nombre: "Carlos Montesquieu", alias: ["Montesquieu", "Saltamontes", "Carlos"] },
+    { nombre: "Diosa Canales", alias: ["Canales", "Venezuela", "🇻🇪", "Diosa"] },
+    { nombre: "Daniela Barranco", alias: ["Daniela", "Barranco", "Venezuela", "🇻🇪", "Dani"] },
+    { nombre: "Pollito Tropical", alias: ["Tropical", "Cuba", "🇨🇺", "Pollito"] },
+    { nombre: "JC Pichardo", alias: ["Pichardo", "🧡", "JC"] },
+    { nombre: "Valka", alias: ["Colombia", "🇨🇴", "Valka"] },
+    { nombre: "Gracie Bon", alias: ["Bon", "Panamá", "Panama", "Gracie", "Greci Bom", "Greci"] },
+    { nombre: "La Insuperable", alias: ["Indhira", "Luna", "Insuperable"] },
+    { nombre: "La Perversa", alias: ["Perversa", "💜", "Perver"] },
+    { nombre: "Mami Nolas", alias: ["Pepita", "Carepepita", "MamiNolas", "Mami Nolas"] },
+    { nombre: "Capiitán Alo", alias: ["Capitan", "Alo", "Nariz", "Capitán"] },
+    { nombre: "YoungSwagon", alias: ["YoungSwagon", "papotico"] },
+    { nombre: "Shadow", alias: ["Blow", "💎"] },
+    { nombre: "Sujeto Oro 24", alias: ["El Mejor Hombre"] },
+    { nombre: "Mami Jordan", alias: ["Jordan", "Mami Jordan"] },
+    { nombre: "Yesther", alias: ["Jesther", "Villano"] },
+    { nombre: "Luis Polonia", alias: ["Polonia", "Rey del Hit"] },
+];
 
 let client;
 let db;
@@ -177,3 +233,4 @@ export default async function handler(req, res) {
         res.status(500).json({ error: error.message });
     }
 }
+
